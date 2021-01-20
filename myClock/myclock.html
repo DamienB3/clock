@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Digital Clock</title>
+<link rel="shortcut" type="image" href="digital-clock.png"/>
+<link rel="shortcut icon" type="image" href="digital-clock.png"/>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta charset="UTF-8">
+<style>
+    html {
+        background: black;
+    }
+    body {
+        text-align: center;
+        font-size: 40px;
+        margin-top: 7em;
+        margin-right: 100px;
+        margin-left: 100px;
+        
+}
+    .wrapper {
+border: #0000cc solid 3px;
+        border-radius: 14px;
+         box-shadow:
+ 3px 5px 30px red,
+   10px 5px 30px #ff9999,
+  10px 5px 30px #ff66ff;
+ 
+       
+}
+    .display {
+       font-family: monospace;
+        font-size: 60px;
+
+   }
+    #time {
+       background: linear-gradient(135deg, white, #ff9999, #ff66ff);
+       border-radius: 10px;
+          animation: animate 1s linear infinite;  
+
+}
+     
+ 
+    @keyframes animate {
+  100%{
+    filter: hue-rotate(360deg);
+      
+  }
+}
+ 
+</style>
+</head>
+  
+<body>
+<div class="wrapper">
+<div class="display">
+    <div id="time"></div>
+
+</div>
+    <span></span>
+<span></span>
+    </div>
+<script>
+setInterval(()=>{
+        const time = document.querySelector(".display #time");
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let day_night = "AM";
+        if(hours > 12){
+          day_night = "PM";
+          hours = hours - 12;
+        }
+        if (hours == 00){
+            hours = 12;
+        }
+        if(seconds < 10){
+          seconds = "0" + seconds;
+        }
+        if(minutes < 10){
+          minutes = "0" + minutes;
+        }
+        if(hours < 10){
+          hours = "0" + hours;
+        }
+        time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+      });
+</script>
+</body>
+</html>
