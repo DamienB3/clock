@@ -4,10 +4,15 @@
 <link rel="shortcut" type="image" href="digital-clock.png"/>
 <link rel="shortcut icon" type="image" href="digital-clock.png"/>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
 <meta charset="UTF-8">
 <style>
     html {
-        background: black;
+      
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 41%, rgba(0,212,255,1) 100%);
     }
     body {
         text-align: center;
@@ -18,7 +23,7 @@
         
 }
     .wrapper {
-border: #0000cc solid 3px;
+border: black solid 3px;
         border-radius: 14px;
          box-shadow:
  3px 5px 30px red,
@@ -35,7 +40,7 @@ border: #0000cc solid 3px;
     #time {
        background: linear-gradient(135deg, white, #ff9999, #ff66ff);
        border-radius: 10px;
-          animation: animate 1s linear infinite;  
+          animation: animate 6s linear infinite;  
 
 }
      
@@ -46,6 +51,17 @@ border: #0000cc solid 3px;
       
   }
 }
+    @media screen and (max-width: 465px) {
+        body {
+          width: 50%;
+           margin-left: 28%;
+            margin-top: 70%;
+        }
+        .display {
+            font-size: 60%;
+        }
+        
+    }
  
 </style>
 </head>
@@ -56,8 +72,6 @@ border: #0000cc solid 3px;
     <div id="time"></div>
 
 </div>
-    <span></span>
-<span></span>
     </div>
 <script>
 setInterval(()=>{
